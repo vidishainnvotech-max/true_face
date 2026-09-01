@@ -3,5 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return response()->json([
+        'application' => 'TrueFace Attendance SaaS',
+        'version' => '1.0.0',
+        'status' => 'Running'
+    ]);
 });
