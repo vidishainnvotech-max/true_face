@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use App\Models\User;
 
 class Tenant extends Model
 {
@@ -54,4 +55,11 @@ class Tenant extends Model
     {
         return 'public_id';
     }
+
+
+    public function users()
+{
+    return $this->hasMany(User::class);
+}
+
 }
